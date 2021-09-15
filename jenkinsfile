@@ -1,5 +1,5 @@
 pipeline{
-    node knode
+    agent {label knode}
     stages{
         stage("test"){
             steps{
