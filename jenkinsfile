@@ -1,10 +1,11 @@
 pipeline{
-    agent any
+    node knode
     stages{
         stage("test"){
-            steps{
-                         echo "hello world" 
-                    }
+            sh echo "hello world"  
+        }
+        stage("build"){
+            sh 'sudo docker build /home/ubuntu/test/. -t azharbhaidocker/customnew:nana'
         }
     }
 }
