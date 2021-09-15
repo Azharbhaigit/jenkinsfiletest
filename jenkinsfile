@@ -2,10 +2,14 @@ pipeline{
     node knode
     stages{
         stage("test"){
-            sh echo "hello world"  
+            steps{
+           sh echo "hello world"  
+            }
         }
         stage("build"){
+            steps{
             sh 'sudo docker build /home/ubuntu/test/. -t azharbhaidocker/customnew:nana'
+             }
         }
     }
 }
